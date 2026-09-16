@@ -1,0 +1,76 @@
+.hero {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.title {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.tagline {
+  margin: 1rem 0 0;
+  max-width: 36rem;
+  font-size: 1.125rem;
+  color: var(--foreground-muted);
+}
+
+.bio {
+  margin: 1.5rem 0 0;
+  max-width: 36rem;
+  line-height: 1.7;
+  color: var(--foreground-muted);
+}
+
+.actions {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.buttonPrimary {
+  border-radius: 999px;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background: var(--foreground);
+  color: var(--background);
+  transition: opacity 0.15s ease;
+}
+
+.buttonPrimary:hover {
+  opacity: 0.9;
+}
+
+.buttonSecondary {
+  border-radius: 999px;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid var(--border-strong);
+  transition: background 0.15s ease;
+}
+
+.buttonSecondary:hover {
+  background: var(--chip-background);
+}
+
+@media (min-width: 640px) {
+  .hero {
+    padding-top: 7rem;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+}

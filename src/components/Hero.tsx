@@ -1,30 +1,24 @@
+import styles from "./Hero.module.css";
+
 export default function Hero() {
   return (
-    <section id="about" className="mx-auto max-w-4xl px-6 pb-20 pt-20 sm:pt-28">
-      <p className="mb-4 text-sm font-medium text-accent">Hi, I&apos;m</p>
-      <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-        Your Name
-      </h1>
-      <p className="mt-4 max-w-xl text-lg text-foreground/70">
+    <section id="about" className={styles.hero}>
+      <p className={styles.eyebrow}>Hi, I&apos;m</p>
+      <h1 className={styles.title}>Your Name</h1>
+      <p className={styles.tagline}>
         A short tagline about what you do — e.g. software engineer building
         clean, reliable web applications.
       </p>
-      <p className="mt-6 max-w-xl leading-relaxed text-foreground/70">
+      <p className={styles.bio}>
         A couple sentences of background: what you work on, what you&apos;re
         interested in, and what you&apos;re currently doing. Keep this brief —
         it&apos;s an introduction, not a resume.
       </p>
-      <div className="mt-8 flex gap-4">
-        <a
-          href="#projects"
-          className="rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-90"
-        >
+      <div className={styles.actions}>
+        <a href="#projects" className={styles.buttonPrimary}>
           View projects
         </a>
-        <a
-          href="#contact"
-          className="rounded-full border border-black/10 px-5 py-2.5 text-sm font-medium transition-colors hover:bg-black/5 dark:border-white/15 dark:hover:bg-white/5"
-        >
+        <a href="#contact" className={styles.buttonSecondary}>
           Get in touch
         </a>
       </div>

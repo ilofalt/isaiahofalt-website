@@ -1,9 +1,10 @@
+import styles from "./Footer.module.css";
+
 export default function Footer() {
   return (
-    <footer className="border-t border-black/5 py-8 dark:border-white/10">
-      <div className="mx-auto max-w-4xl px-6 text-sm text-foreground/50">
-        © {new Date().getFullYear()} Your Name. Built with Next.js and
-        Tailwind CSS.
+    <footer className={styles.footer}>
+      <div className={styles.container}>
+        © {new Date().getFullYear()} Your Name. Built with Next.js and React.
       </div>
     </footer>
   );

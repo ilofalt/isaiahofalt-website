@@ -1,3 +1,5 @@
+import styles from "./Projects.module.css";
+
 type Project = {
   title: string;
   description: string;
@@ -31,27 +33,16 @@ const projects: Project[] = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="mx-auto max-w-4xl px-6 py-20">
-      <h2 className="text-2xl font-semibold tracking-tight">Projects</h2>
-      <div className="mt-8 grid gap-6 sm:grid-cols-2">
+    <section id="projects" className={styles.section}>
+      <h2 className={styles.heading}>Projects</h2>
+      <div className={styles.grid}>
         {projects.map((project) => (
-          <a
-            key={project.title}
-            href={project.href}
-            className="group rounded-2xl border border-black/10 p-6 transition-colors hover:border-black/20 dark:border-white/10 dark:hover:border-white/20"
-          >
-            <h3 className="font-medium transition-colors group-hover:text-accent">
-              {project.title}
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-foreground/70">
-              {project.description}
-            </p>
-            <div className="mt-4 flex flex-wrap gap-2">
+          <a key={project.title} href={project.href} className={styles.card}>
+            <h3 className={styles.cardTitle}>{project.title}</h3>
+            <p className={styles.cardDescription}>{project.description}</p>
+            <div className={styles.tags}>
               {project.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full bg-black/5 px-2.5 py-1 text-xs text-foreground/70 dark:bg-white/10"
-                >
+                <span key={tag} className={styles.tag}>
                   {tag}
                 </span>
               ))}
