@@ -1,32 +1,49 @@
-import styles from "./Contact.module.css";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
+import EmailIcon from "@mui/icons-material/EmailOutlined";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 const links = [
-  { label: "Email", href: "mailto:ilofalt@gmail.com" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/isaiah-ofalt/" },
-  { label: "GitHub", href: "https://github.com/ilofalt" },
+  { label: "Email", href: "mailto:ilofalt@gmail.com", icon: <EmailIcon /> },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/isaiah-ofalt/",
+    icon: <LinkedInIcon />,
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/ilofalt",
+    icon: <GitHubIcon />,
+  },
 ];
 
 export default function Contact() {
   return (
-    <section id="contact" className={styles.section}>
-      <h2 className={styles.heading}>Get in touch</h2>
-      <p className={styles.description}>
+    <Container maxWidth="md" component="section" id="contact" sx={{ py: 8 }}>
+      <Typography variant="h5" gutterBottom sx={{ fontWeight: 600, letterSpacing: -0.5 }}>
+        Get in touch
+      </Typography>
+      <Typography color="text.secondary" sx={{ mt: 1.5, maxWidth: 560 }}>
         Feel free to reach out — I&apos;m happy to hear about opportunities,
         collaborations, or just to chat.
-      </p>
-      <div className={styles.links}>
+      </Typography>
+      <Stack direction="row" spacing={2} useFlexGap sx={{ mt: 3, flexWrap: "wrap" }}>
         {links.map((link) => (
-          <a
+          <Button
             key={link.label}
             href={link.href}
             target={link.href.startsWith("http") ? "_blank" : undefined}
             rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-            className={styles.link}
+            variant="outlined"
+            startIcon={link.icon}
           >
             {link.label}
-          </a>
+          </Button>
         ))}
-      </div>
-    </section>
+      </Stack>
+    </Container>
   );
 }

@@ -1,4 +1,8 @@
-import styles from "./Experience.module.css";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import Stack from "@mui/material/Stack";
+import Box from "@mui/material/Box";
+import Divider from "@mui/material/Divider";
 
 type Job = {
   role: string;
@@ -51,35 +55,54 @@ const jobs: Job[] = [
 
 export default function Experience() {
   return (
-    <section id="experience" className={styles.section}>
-      <h2 className={styles.heading}>Experience</h2>
-      <div className={styles.list}>
+    <Container maxWidth="md" component="section" id="experience" sx={{ py: 8 }}>
+      <Typography variant="h5" gutterBottom sx={{ fontWeight: 600, letterSpacing: -0.5 }}>
+        Experience
+      </Typography>
+      <Stack spacing={4} sx={{ mt: 3 }}>
         {jobs.map((job) => (
-          <div key={`${job.company}-${job.dates}`} className={styles.entry}>
-            <div className={styles.entryHeader}>
-              <h3 className={styles.role}>{job.role}</h3>
-              <span className={styles.dates}>{job.dates}</span>
-            </div>
-            <p className={styles.company}>{job.company}</p>
-            <ul className={styles.bullets}>
+          <Box
+            key={`${job.company}-${job.dates}`}
+            sx={{ borderLeft: 2, borderColor: "divider", pl: 3 }}
+          >
+            <Stack
+              direction="row"
+              spacing={1}
+              sx={{ justifyContent: "space-between", alignItems: "baseline", flexWrap: "wrap" }}
+            >
+              <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
+                {job.role}
+              </Typography>
+              <Typography variant="caption" color="text.secondary" sx={{ whiteSpace: "nowrap" }}>
+                {job.dates}
+              </Typography>
+            </Stack>
+            <Typography variant="body2" color="primary" sx={{ mt: 0.25 }}>
+              {job.company}
+            </Typography>
+            <Stack component="ul" spacing={0.5} sx={{ mt: 1.5, pl: 2.5, color: "text.secondary" }}>
               {job.bullets.map((bullet) => (
-                <li key={bullet}>{bullet}</li>
+                <Typography key={bullet} component="li" variant="body2" sx={{ lineHeight: 1.6 }}>
+                  {bullet}
+                </Typography>
               ))}
-            </ul>
-          </div>
+            </Stack>
+          </Box>
         ))}
-      </div>
+      </Stack>
 
-      <div className={styles.education}>
-        <h3 className={styles.educationHeading}>Education</h3>
-        <div className={styles.educationEntry}>
-          <p className={styles.educationSchool}>Liberty University</p>
-          <p className={styles.educationDetail}>
-            Bachelor of Science in Information Technology, Data Networking
-            and Security — 2018
-          </p>
-        </div>
-      </div>
-    </section>
+      <Divider sx={{ mt: 5, mb: 3 }} />
+
+      <Typography variant="h6" gutterBottom sx={{ fontWeight: 600, letterSpacing: -0.5 }}>
+        Education
+      </Typography>
+      <Typography variant="body1" sx={{ fontWeight: 500 }}>
+        Liberty University
+      </Typography>
+      <Typography variant="body2" color="text.secondary">
+        Bachelor of Science in Information Technology, Data Networking and
+        Security — 2018
+      </Typography>
+    </Container>
   );
 }
