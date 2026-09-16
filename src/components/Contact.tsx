@@ -3,6 +3,7 @@ import styles from "./Contact.module.css";
 const links = [
   { label: "Email", href: "mailto:ilofalt@gmail.com" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/isaiah-ofalt/" },
+  { label: "GitHub", href: "https://github.com/ilofalt" },
 ];
 
 export default function Contact() {
