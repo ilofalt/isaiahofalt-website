@@ -6,6 +6,7 @@ import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
+import ColorModeToggle from "./ColorModeToggle";
 
 const navItems = [
   { label: "About", href: "#about" },
@@ -33,7 +34,7 @@ export default function Header() {
           >
             Isaiah Ofalt
           </Typography>
-          <Stack direction="row" spacing={3}>
+          <Stack direction="row" spacing={3} sx={{ alignItems: "center" }}>
             {navItems.map((item) => (
               <Link
                 key={item.label}
@@ -46,6 +47,7 @@ export default function Header() {
                 {item.label}
               </Link>
             ))}
+            <ColorModeToggle />
           </Stack>
         </Toolbar>
       </Container>

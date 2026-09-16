@@ -10,10 +10,28 @@ const roboto = Roboto({
   variable: "--font-roboto",
 });
 
+const title = "Isaiah Ofalt — Senior Software Engineer";
+const description =
+  "Portfolio of Isaiah Ofalt, a senior full stack software engineer specializing in React, Next.js, Java, and PostgreSQL.";
+
 export const metadata: Metadata = {
-  title: "Isaiah Ofalt — Senior Software Engineer",
-  description:
-    "Portfolio of Isaiah Ofalt, a senior full stack software engineer specializing in React, Next.js, Java, and PostgreSQL.",
+  metadataBase: new URL("https://isaiahofalt.com"),
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    url: "https://isaiahofalt.com",
+    siteName: "Isaiah Ofalt",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: title }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({
