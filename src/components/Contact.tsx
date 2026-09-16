@@ -1,6 +1,9 @@
 import styles from "./Contact.module.css";
 
-const links = [{ label: "Email", href: "mailto:ilofalt@gmail.com" }];
+const links = [
+  { label: "Email", href: "mailto:ilofalt@gmail.com" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/isaiah-ofalt/" },
+];
 
 export default function Contact() {
   return (
