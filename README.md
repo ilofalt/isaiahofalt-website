@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# isaiahofalt.com
 
-## Getting Started
+Personal portfolio site for Isaiah Ofalt. Live at [isaiahofalt.com](https://isaiahofalt.com).
 
-First, run the development server:
+## Stack
+
+- [Next.js](https://nextjs.org) (App Router), built as a static export (`output: "export"` in `next.config.mjs`) — no server, just static HTML/CSS/JS
+- [Material UI](https://mui.com) for components and theming (light/dark mode follows system preference, with a manual toggle in the header)
+- TypeScript
+
+## Local development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Other scripts:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run build` — production build, outputs static files to `out/`
+- `npm run start` — serve the built `out/` folder locally (static export doesn't support `next start`)
+- `npm run lint` — ESLint
+- `npm run deploy` — build, sync to S3, invalidate CloudFront (manual fallback; normally CI does this)
 
-## Learn More
+## Infrastructure
 
-To learn more about Next.js, take a look at the following resources:
+Hosting is AWS: S3 (private bucket) behind CloudFront (CDN + HTTPS), with Route 53 for DNS and ACM for the TLS certificate. Everything is defined as Terraform in [`infra/`](infra/), with state stored remotely in S3 (not committed locally).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The domain is registered at Namecheap; DNS is delegated to the Route 53 hosted zone via custom nameservers.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+Pushing to `main` triggers [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml): build → sync `out/` to S3 → invalidate the CloudFront cache. Authentication to AWS uses OIDC federation (GitHub issues a short-lived signed token, AWS trades it for temporary credentials scoped to a single least-privilege deploy role) — no AWS keys are stored in GitHub.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Branch workflow:** all changes are committed to `dev` first. Nothing goes live until `dev` is merged into `main` and pushed.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+git checkout dev
+# make changes, commit
+git checkout main
+git merge dev
+git push origin main dev
+```

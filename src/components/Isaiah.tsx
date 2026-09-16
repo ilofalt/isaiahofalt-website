@@ -3,7 +3,7 @@ import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 
-export default function Hero() {
+export default function Isaiah() {
   return (
     <Container maxWidth="md" component="section" id="about" sx={{ py: { xs: 8, sm: 12 } }}>
       <Typography variant="overline" color="primary" sx={{ display: "block", fontWeight: 600 }}>
