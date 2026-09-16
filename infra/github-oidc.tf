@@ -4,6 +4,23 @@ variable "github_repo" {
   default     = "ilofalt/isaiahofalt-website"
 }
 
+# GitHub now issues OIDC tokens with an "immutable ID" subject claim —
+# repo:{owner_login}@{owner_id}/{repo_name}@{repo_id}:ref:... — instead of
+# the classic repo:{owner}/{repo}:ref:... format, so the numeric IDs are
+# required here too. Confirmed via `gh api repos/ilofalt/isaiahofalt-website
+# --jq '{owner_id: .owner.id, repo_id: .id}'`.
+variable "github_owner_id" {
+  description = "Numeric GitHub owner (user) ID, part of GitHub's immutable OIDC subject claim"
+  type        = string
+  default     = "118030664"
+}
+
+variable "github_repo_id" {
+  description = "Numeric GitHub repo ID, part of GitHub's immutable OIDC subject claim"
+  type        = string
+  default     = "1373641886"
+}
+
 data "tls_certificate" "github_actions" {
   url = "https://token.actions.githubusercontent.com/.well-known/openid-configuration"
 }
@@ -35,7 +52,9 @@ data "aws_iam_policy_document" "github_actions_trust" {
     condition {
       test     = "StringEquals"
       variable = "token.actions.githubusercontent.com:sub"
-      values   = ["repo:${var.github_repo}:ref:refs/heads/main"]
+      values = [
+        "repo:${split("/", var.github_repo)[0]}@${var.github_owner_id}/${split("/", var.github_repo)[1]}@${var.github_repo_id}:ref:refs/heads/main"
+      ]
     }
   }
 }
