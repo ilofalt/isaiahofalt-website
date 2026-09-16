@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "npx serve out",
+    "lint": "next lint",
+    "deploy": "bash infra/deploy.sh"
   },
   "dependencies": {
     "next": "14.2.35",
