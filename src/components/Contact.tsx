@@ -26,10 +26,6 @@ export default function Contact() {
       <Typography variant="h5" gutterBottom sx={{ fontWeight: 600, letterSpacing: -0.5 }}>
         Get in touch
       </Typography>
-      <Typography color="text.secondary" sx={{ mt: 1.5, maxWidth: 560 }}>
-        Feel free to reach out — I&apos;m happy to hear about opportunities,
-        collaborations, or just to chat.
-      </Typography>
       <Stack direction="row" spacing={2} useFlexGap sx={{ mt: 3, flexWrap: "wrap" }}>
         {links.map((link) => (
           <Button

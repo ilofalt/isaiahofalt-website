@@ -26,10 +26,7 @@ export default function Hero() {
         end-to-end ownership in production environments.
       </Typography>
       <Stack direction="row" spacing={2} useFlexGap sx={{ mt: 4, flexWrap: "wrap" }}>
-        <Button href="#experience" variant="contained" disableElevation size="large">
-          View experience
-        </Button>
-        <Button href="#contact" variant="outlined" size="large">
+        <Button href="#contact" variant="contained" disableElevation size="large">
           Get in touch
         </Button>
         <Button href="/Isaiah-Ofalt-Resume.pdf" download variant="outlined" size="large">
