@@ -5,14 +5,17 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.container}>
         <a href="#" className={styles.logo}>
-          Your Name
+          Isaiah Ofalt
         </a>
         <nav className={styles.nav}>
           <a href="#about" className={styles.navLink}>
             About
           </a>
-          <a href="#projects" className={styles.navLink}>
-            Projects
+          <a href="#skills" className={styles.navLink}>
+            Skills
+          </a>
+          <a href="#experience" className={styles.navLink}>
+            Experience
           </a>
           <a href="#contact" className={styles.navLink}>
             Contact

@@ -18,37 +18,21 @@
   grid-template-columns: 1fr;
 }
 
-.card {
-  display: block;
+.category {
   border-radius: 1rem;
   border: 1px solid var(--border);
   padding: 1.5rem;
-  transition: border-color 0.15s ease;
 }
 
-.card:hover {
-  border-color: var(--border-strong);
-}
-
-.cardTitle {
+.categoryTitle {
   margin: 0;
-  font-weight: 500;
-  transition: color 0.15s ease;
-}
-
-.card:hover .cardTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
   color: var(--accent);
 }
 
-.cardDescription {
-  margin: 0.5rem 0 0;
-  font-size: 0.875rem;
-  line-height: 1.6;
-  color: var(--foreground-muted);
-}
-
 .tags {
-  margin-top: 1rem;
+  margin-top: 0.75rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
@@ -58,12 +42,18 @@
   border-radius: 999px;
   background: var(--chip-background);
   padding: 0.25rem 0.65rem;
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   color: var(--foreground-muted);
 }
 
 @media (min-width: 640px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

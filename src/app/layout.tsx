@@ -14,8 +14,9 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Your Name — Portfolio",
-  description: "Personal portfolio of Your Name.",
+  title: "Isaiah Ofalt — Senior Software Engineer",
+  description:
+    "Portfolio of Isaiah Ofalt, a senior full stack software engineer specializing in React, Next.js, Java, and PostgreSQL.",
 };
 
 export default function RootLayout({
@@ -25,9 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
       </body>
     </html>
