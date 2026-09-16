@@ -23,6 +23,13 @@ export default function Hero() {
         <a href="#contact" className={styles.buttonSecondary}>
           Get in touch
         </a>
+        <a
+          href="/Isaiah-Ofalt-Resume.pdf"
+          download
+          className={styles.buttonSecondary}
+        >
+          Download resume
+        </a>
       </div>
     </section>
   );
