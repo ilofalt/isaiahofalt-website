@@ -17,7 +17,7 @@ const jobs: Job[] = [
     company: "Intelligenesis LLC / Ennoble First",
     dates: "Oct 2023 – Present",
     bullets: [
-      "Led development on a front end from scratch for a legacy application, servicing hundreds of customers with live data, using React, Next.js, React Query, and TypeScript",
+      "Rebuilt the front end from scratch for a legacy application supporting hundreds of customers with current data, using React, Next.js, React Query, and TypeScript",
       "Owned backend architecture including Java services, PostgreSQL data layer, and all REST API design and implementation",
       "Integrated Swagger based API documentation and improved developer experience across teams",
       "Built scalable services using Docker and Kubernetes in production environments",
