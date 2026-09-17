@@ -8,7 +8,7 @@ import Chip from "@mui/material/Chip";
 const skillCategories = [
   { label: "Languages", skills: ["Java", "JavaScript", "TypeScript", "Python", "SQL"] },
   { label: "Frontend", skills: ["ReactJS", "Next.js", "React Query"] },
-  { label: "Backend", skills: ["REST APIs", "Swagger", "Microservices"] },
+  { label: "Backend", skills: ["Node.js", "REST APIs", "Swagger", "Microservices"] },
   { label: "Data", skills: ["PostgreSQL", "MySQL", "ElasticSearch", "Hadoop"] },
   { label: "DevOps", skills: ["Docker", "Kubernetes", "Ansible", "Terraform", "AWS"] },
   { label: "Systems", skills: ["Linux", "CentOS", "RHEL"] },
