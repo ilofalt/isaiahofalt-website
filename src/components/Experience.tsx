@@ -17,10 +17,12 @@ const jobs: Job[] = [
     company: "Intelligenesis LLC / Ennoble First",
     dates: "Oct 2023 – Present",
     bullets: [
-      "Rebuilt the front end from scratch for a legacy application supporting hundreds of customers with current data, using React, Next.js, React Query, and TypeScript",
+      "Led team to build a front end from scratch for a legacy application supporting hundreds of customers with current data, using React, Next.js, React Query, and TypeScript",
       "Owned backend architecture including Java services, PostgreSQL data layer, and all REST API design and implementation",
       "Integrated Swagger based API documentation and improved developer experience across teams",
       "Built scalable services using Docker and Kubernetes in production environments",
+      "Used an AI coding assistant (Claude) to speed up development",
+      "Conducted sprint reviews and sprint planning in an Agile development environment",
     ],
   },
   {
@@ -102,6 +104,16 @@ export default function Experience() {
       <Typography variant="body2" color="text.secondary">
         Bachelor of Science in Information Technology, Data Networking and
         Security — 2018
+      </Typography>
+
+      <Typography variant="h6" gutterBottom sx={{ fontWeight: 600, letterSpacing: -0.5, mt: 4 }}>
+        Certifications
+      </Typography>
+      <Typography variant="body1" sx={{ fontWeight: 500 }}>
+        Building with the Claude API
+      </Typography>
+      <Typography variant="body2" color="text.secondary">
+        Anthropic — 2026
       </Typography>
     </Container>
   );
