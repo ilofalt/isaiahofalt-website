@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "npx serve out",
-    "lint": "next lint",
+    "lint": "eslint src e2e --ext .js,.jsx,.ts,.tsx",
     "test": "jest",
     "test:e2e": "playwright test",
     "deploy": "bash infra/deploy.sh"
@@ -17,7 +17,7 @@
     "@mui/icons-material": "^9.4.0",
     "@mui/material": "^9.4.0",
     "@mui/material-nextjs": "^9.4.0",
-    "next": "14.2.35",
+    "next": "^16.3.5",
     "react": "^18",
     "react-dom": "^18"
   },
