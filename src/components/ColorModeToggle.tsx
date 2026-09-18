@@ -11,6 +11,10 @@ export default function ColorModeToggle() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // Deliberately setting state on mount: this is the standard pattern for
+    // deferring client-only rendering until after hydration, to avoid an
+    // SSR/CSR mismatch (the resolved color scheme is unknown on the server).
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 
