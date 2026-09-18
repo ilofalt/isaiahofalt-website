@@ -12,8 +12,9 @@ const skillCategories = [
   { label: "Data", skills: ["PostgreSQL", "MySQL", "ElasticSearch", "Hadoop"] },
   { label: "DevOps", skills: ["Docker", "Kubernetes", "Ansible", "Terraform", "AWS"] },
   { label: "Systems", skills: ["Linux", "CentOS", "RHEL"] },
-  { label: "AI Tools", skills: ["Claude", "CodeRabbit"] },
-  { label: "Testing", skills: ["Jest", "React Testing Library", "Playwright"] },
+  { label: "AI Tools", skills: ["Claude", "CodeRabbit", "Copilot Autofix"] },
+  { label: "Testing", skills: ["Jest", "React Testing Library", "Playwright", "JUnit", "SonarQube"] },
+  { label: "Security", skills: ["Dependabot", "CodeQL", "Secret Scanning"] },
 ];
 
 export default function Skills() {
