@@ -21,7 +21,6 @@ describe("Home page composition", () => {
     ].map((name) => getByRole("heading", { name }));
 
     for (let i = 1; i < headings.length; i++) {
-      // eslint-disable-next-line no-bitwise
       expect(
         headings[i - 1].compareDocumentPosition(headings[i]) &
           Node.DOCUMENT_POSITION_FOLLOWING
