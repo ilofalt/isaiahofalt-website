@@ -49,7 +49,7 @@ jobs:
           name: site-build
           path: out/
 
-      - uses: aws-actions/configure-aws-credentials@v4
+      - uses: aws-actions/configure-aws-credentials@v6
         with:
           role-to-assume: arn:aws:iam::522400670446:role/isaiahofalt-website-deploy
           aws-region: us-east-1
