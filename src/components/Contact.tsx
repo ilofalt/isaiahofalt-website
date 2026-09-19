@@ -51,7 +51,7 @@ export default function Contact() {
       <LinkButtons links={contactLinks} />
 
       <Typography variant="h6" gutterBottom sx={{ fontWeight: 600, letterSpacing: -0.5, mt: 5 }}>
-        Elsewhere
+        Links
       </Typography>
       <LinkButtons links={elsewhereLinks} />
     </Container>
