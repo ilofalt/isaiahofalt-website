@@ -23,6 +23,16 @@ test("every nav link scrolls to its matching section", async ({ page }) => {
   }
 });
 
+test("the sticky header stays visible after navigating to any section", async ({ page }) => {
+  await page.goto("/");
+  const header = page.locator("header");
+
+  for (const name of ["Skills", "Experience", "Contact"]) {
+    await page.getByRole("link", { name, exact: true }).click();
+    await expect(header).toBeInViewport();
+  }
+});
+
 test("resume PDF is downloadable and served as a PDF", async ({ page, request }) => {
   await page.goto("/");
   const resumeLink = page.getByRole("link", { name: "Download resume" });

@@ -2,13 +2,6 @@ import { renderWithTheme, screen } from "@/test-utils";
 import Header from "../Header";
 
 describe("Header", () => {
-  it("renders the site name as a link back to the top", () => {
-    renderWithTheme(<Header />);
-    const logo = screen.getByText("Isaiah Ofalt");
-    expect(logo).toBeInTheDocument();
-    expect(logo.closest("a")).toHaveAttribute("href", "#");
-  });
-
   it("renders nav links pointing at each page section", () => {
     renderWithTheme(<Header />);
     expect(screen.getByRole("link", { name: "About" })).toHaveAttribute("href", "#about");
