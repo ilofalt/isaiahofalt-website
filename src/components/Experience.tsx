@@ -57,7 +57,7 @@ const jobs: Job[] = [
 
 export default function Experience() {
   return (
-    <Container maxWidth="md" component="section" id="experience" sx={{ py: 8 }}>
+    <Container maxWidth="md" component="section" id="experience" sx={{ py: 3 }}>
       <Typography variant="h5" gutterBottom sx={{ fontWeight: 600, letterSpacing: -0.5 }}>
         Experience
       </Typography>

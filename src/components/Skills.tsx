@@ -19,7 +19,7 @@ const skillCategories = [
 
 export default function Skills() {
   return (
-    <Container maxWidth="md" component="section" id="skills" sx={{ py: 8 }}>
+    <Container maxWidth="md" component="section" id="skills" sx={{ py: 3 }}>
       <Typography variant="h5" gutterBottom sx={{ fontWeight: 600, letterSpacing: -0.5 }}>
         Core Technologies
       </Typography>
