@@ -5,7 +5,7 @@ import Button from "@mui/material/Button";
 
 export default function Isaiah() {
   return (
-    <Container maxWidth="md" component="section" id="about" sx={{ py: { xs: 6, sm: 8 } }}>
+    <Container maxWidth="md" component="section" id="about" sx={{ py: { xs: 4, sm: 5 } }}>
       <Typography variant="overline" color="primary" sx={{ display: "block", fontWeight: 600 }}>
         Hi, I&apos;m
       </Typography>
