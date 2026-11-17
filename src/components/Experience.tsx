@@ -21,6 +21,7 @@ const jobs: Job[] = [
       "Owned backend architecture including Java services, PostgreSQL data layer, and all REST API design and implementation",
       "Integrated Swagger based API documentation and improved developer experience across teams",
       "Built scalable services using Docker and Kubernetes in production environments",
+      "Built event-driven data pipelines with Apache Kafka to support real-time processing",
       "Used an AI coding assistant (Claude) to speed up development",
       "Conducted sprint reviews and sprint planning in an Agile development environment",
     ],
